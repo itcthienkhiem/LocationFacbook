@@ -39,6 +39,7 @@ namespace wcfCheckinPlaces
             var uid = me["id"];
             return uid;
         }
+        
         public string getBarFacebook(string access_token, string latitude, string longitude)
         {
             return getDataFacebook(access_token, latitude, longitude, "bar");
@@ -169,5 +170,13 @@ namespace wcfCheckinPlaces
         {
             throw new NotImplementedException();
         }
+        // neo4j 
+        public int insertNote()
+        {
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            // insert node ...
+        }
+
+
     }
 }
