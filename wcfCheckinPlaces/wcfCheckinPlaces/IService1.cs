@@ -30,8 +30,13 @@ namespace wcfCheckinPlaces
         string getAllPhotoImages(string access_token, string albumID);
         [OperationContract]
         string getAllAlbums(string access_token, string locationID);
+       
         [OperationContract]
-        int insertNote();
+        string getCoffeeFacebook(string access_token, string latitude, string longitude);
+        [OperationContract]
+        void createLocation(Location location, Datum datum);
+
+
     }
 
 

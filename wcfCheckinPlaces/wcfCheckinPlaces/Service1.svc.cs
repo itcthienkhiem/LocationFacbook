@@ -171,10 +171,12 @@ namespace wcfCheckinPlaces
             throw new NotImplementedException();
         }
         // neo4j 
-        public int insertNote()
+        public void createLocation(Location location, Datum datum)
         {
+
             neo4jNodeManagement manager = new neo4jNodeManagement();
             // insert node ...
+            manager.createLocation(location, datum) ;
         }
 
 

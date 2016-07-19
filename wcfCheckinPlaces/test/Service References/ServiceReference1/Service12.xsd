@@ -105,4 +105,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getCoffeeFacebook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="access_token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCoffeeFacebookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCoffeeFacebookResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="location" nillable="true" type="q3:Location" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="datum" nillable="true" type="q4:Datum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
