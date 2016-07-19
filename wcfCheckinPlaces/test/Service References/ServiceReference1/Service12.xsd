@@ -15,20 +15,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetDataUsingDataContract">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="composite" nillable="true" type="q1:CompositeType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetDataUsingDataContractResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q2:CompositeType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetAccessTokenFromCode">
     <xs:complexType>
       <xs:sequence>
@@ -124,12 +110,24 @@
   <xs:element name="createLocation">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="location" nillable="true" type="q3:Location" />
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="datum" nillable="true" type="q4:Datum" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="location" nillable="true" type="q1:Location" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="datum" nillable="true" type="q2:Datum" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="createLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="root" nillable="true" type="q3:RootObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getObjectResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

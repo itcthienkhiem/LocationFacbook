@@ -18,10 +18,11 @@ namespace test
             // access_token is first get for all working...
             string access_token =  c.GetAccessTokenFromCode("1387174581298632", "336174fabd97c0d9fa43a75d43956e84");
             var objects = c.getCoffeeFacebook(access_token, "10.823099", "106.629664");
-            RootObject result = JsonConvert.DeserializeObject <ServiceReference1.Location>(objects.ToString());
+            ServiceReference1.RootObject result = JsonConvert.DeserializeObject<ServiceReference1.RootObject>(objects.ToString());
             foreach (var item in result.data)
             {
-                c.createLocationAsync( item.location, item);
+                c.createLocationAsync( item.location, item);//insert location
+                
                 //insert catagory
                 //insert  location vao neo4j
                 //insert quan he

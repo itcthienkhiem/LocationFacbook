@@ -20,18 +20,7 @@ namespace wcfCheckinPlaces
             return string.Format("You entered: {0}", value);
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }
+     
         public object getPositionWebUser(string FacebookAccessToken)
         {
             var facebookClient = new FacebookClient(FacebookAccessToken);
@@ -179,6 +168,82 @@ namespace wcfCheckinPlaces
             manager.createLocation(location, datum) ;
         }
 
+        public void getObject(RootObject root)
+        { 
+            
+        }
 
+
+        public void deleteLocation(string fid)
+        {
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.deleteLocation(fid);
+        }
+
+        public void deleteLocation()
+        {
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.deleteLocation();
+
+        }
+
+        public void createCategoryList(CategoryList C)
+        {
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.createCategoryList(C);
+
+        }
+
+        public void deleteCategoryList(string id)
+        {
+            //lam giong nhung phan o tren -> goi lai ham trong manager , bo dong throw di 
+
+            throw new NotImplementedException();
+        }
+
+        public void createDatum(Datum D)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void deleteDatum(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void createRelationLocationCategoryList(string location_fid, string categorylist_id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void createRelationCategoryListLocation(string categorylist_id, string location_fid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void createRelationDatumCategoryList(string Did, string Cid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void createRelationDatumCategoryList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void createRelationDatumLocation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void addPropertyNode(string name_object, string fid, Dictionary<string, int> dict)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void removePropertyNode(string name_object, string fid, List<string> parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

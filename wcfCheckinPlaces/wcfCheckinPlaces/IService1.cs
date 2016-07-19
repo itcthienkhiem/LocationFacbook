@@ -17,9 +17,6 @@ namespace wcfCheckinPlaces
         string GetData(int value);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        [OperationContract]
         string GetAccessTokenFromCode(string AppID, string AppSecret);
         [OperationContract]
         string getFoodFacebook(string access_token, string latitude, string longitude);
@@ -35,30 +32,94 @@ namespace wcfCheckinPlaces
         string getCoffeeFacebook(string access_token, string latitude, string longitude);
         [OperationContract]
         void createLocation(Location location, Datum datum);
-
+        [OperationContract]
+        void getObject(RootObject root);
+        [OperationContract]
+        void deleteLocation(string fid);
+        [OperationContract]
+        void deleteLocation();
+        [OperationContract]
+        void createCategoryList(CategoryList C);
+        [OperationContract]
+        void deleteCategoryList(String id);
+        [OperationContract]
+        void createDatum(Datum D);
+        [OperationContract]
+        void deleteDatum(string id);
+        [OperationContract]
+        void createRelationLocationCategoryList(string location_fid, string categorylist_id);
+        [OperationContract]
+        void createRelationCategoryListLocation(string categorylist_id, string location_fid);
+        [OperationContract]
+        void createRelationDatumCategoryList(string Did, string Cid);
+        [OperationContract]
+        void createRelationDatumCategoryList();
+        [OperationContract]
+        void createRelationDatumLocation();
+        [OperationContract]
+        void addPropertyNode(string name_object, string fid, Dictionary<string, int> dict);
+        [OperationContract]
+        void removePropertyNode(string name_object, string fid, List<string> parameters);
 
     }
 
 
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]
-    public class CompositeType
+    public class CategoryList
     {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
         [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
+        public string id { get; set; }
         [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        public string name { get; set; }
+    }
+    [DataContract]
+    public class Location
+    {
+        [DataMember]
+        public string street { get; set; }
+        [DataMember]
+        public string city { get; set; }
+        [DataMember]
+        public string state { get; set; }
+        [DataMember]
+        public string country { get; set; }
+        [DataMember]
+        public string zip { get; set; }
+        [DataMember]
+        public double latitude { get; set; }
+        [DataMember]
+        public double longitude { get; set; }
+        [DataMember]
+        public string fid { get; set; }
+        [DataMember]
+        public string name { get; set; }
+    }
+    [DataContract]
+    public class Datum
+    {
+        [DataMember]
+        public string category { get; set; }
+        [DataMember]
+        public List<CategoryList> category_list { get; set; }
+        [DataMember]
+        public Location location { get; set; }
+        [DataMember]
+        public string name { get; set; }
+        [DataMember]
+        public string id { get; set; }
+    }
+    [DataContract]
+    public class Paging
+    {
+        [DataMember]
+        public string next { get; set; }
+    }
+    [DataContract]
+    public class RootObject
+    {
+        [DataMember]
+        public List<Datum> data { get; set; }
+        [DataMember]
+        public Paging paging { get; set; }
     }
 }

@@ -1,10 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="CompositeType">
+  <xs:complexType name="Location">
     <xs:sequence>
-      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
-      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="Datum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="category_list" nillable="true" type="tns:ArrayOfCategoryList" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="location" nillable="true" type="tns:Location" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Datum" nillable="true" type="tns:Datum" />
+  <xs:complexType name="ArrayOfCategoryList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryList" nillable="true" type="tns:CategoryList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryList" nillable="true" type="tns:ArrayOfCategoryList" />
+  <xs:complexType name="CategoryList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryList" nillable="true" type="tns:CategoryList" />
+  <xs:complexType name="RootObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data" nillable="true" type="tns:ArrayOfDatum" />
+      <xs:element minOccurs="0" name="paging" nillable="true" type="tns:Paging" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RootObject" nillable="true" type="tns:RootObject" />
+  <xs:complexType name="ArrayOfDatum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Datum" nillable="true" type="tns:Datum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatum" nillable="true" type="tns:ArrayOfDatum" />
+  <xs:complexType name="Paging">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="next" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Paging" nillable="true" type="tns:Paging" />
 </xs:schema>
