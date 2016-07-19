@@ -519,6 +519,72 @@ namespace test.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getObject", ReplyAction="http://tempuri.org/IService1/getObjectResponse")]
         System.Threading.Tasks.Task getObjectAsync(test.ServiceReference1.RootObject root);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteLocation", ReplyAction="http://tempuri.org/IService1/deleteLocationResponse")]
+        void deleteLocation(string fid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteLocation", ReplyAction="http://tempuri.org/IService1/deleteLocationResponse")]
+        System.Threading.Tasks.Task deleteLocationAsync(string fid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createCategoryList", ReplyAction="http://tempuri.org/IService1/createCategoryListResponse")]
+        void createCategoryList(test.ServiceReference1.CategoryList C);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createCategoryList", ReplyAction="http://tempuri.org/IService1/createCategoryListResponse")]
+        System.Threading.Tasks.Task createCategoryListAsync(test.ServiceReference1.CategoryList C);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteCategoryList", ReplyAction="http://tempuri.org/IService1/deleteCategoryListResponse")]
+        void deleteCategoryList(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteCategoryList", ReplyAction="http://tempuri.org/IService1/deleteCategoryListResponse")]
+        System.Threading.Tasks.Task deleteCategoryListAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createDatum", ReplyAction="http://tempuri.org/IService1/createDatumResponse")]
+        void createDatum(test.ServiceReference1.Datum D);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createDatum", ReplyAction="http://tempuri.org/IService1/createDatumResponse")]
+        System.Threading.Tasks.Task createDatumAsync(test.ServiceReference1.Datum D);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteDatum", ReplyAction="http://tempuri.org/IService1/deleteDatumResponse")]
+        void deleteDatum(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/deleteDatum", ReplyAction="http://tempuri.org/IService1/deleteDatumResponse")]
+        System.Threading.Tasks.Task deleteDatumAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createRelationLocationCategoryList", ReplyAction="http://tempuri.org/IService1/createRelationLocationCategoryListResponse")]
+        void createRelationLocationCategoryList(string location_fid, string categorylist_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createRelationLocationCategoryList", ReplyAction="http://tempuri.org/IService1/createRelationLocationCategoryListResponse")]
+        System.Threading.Tasks.Task createRelationLocationCategoryListAsync(string location_fid, string categorylist_id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createRelationCategoryListLocation", ReplyAction="http://tempuri.org/IService1/createRelationCategoryListLocationResponse")]
+        void createRelationCategoryListLocation(string categorylist_id, string location_fid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createRelationCategoryListLocation", ReplyAction="http://tempuri.org/IService1/createRelationCategoryListLocationResponse")]
+        System.Threading.Tasks.Task createRelationCategoryListLocationAsync(string categorylist_id, string location_fid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createRelationDatumCategoryList", ReplyAction="http://tempuri.org/IService1/createRelationDatumCategoryListResponse")]
+        void createRelationDatumCategoryList(string Did, string Cid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createRelationDatumCategoryList", ReplyAction="http://tempuri.org/IService1/createRelationDatumCategoryListResponse")]
+        System.Threading.Tasks.Task createRelationDatumCategoryListAsync(string Did, string Cid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createRelationDatumLocation", ReplyAction="http://tempuri.org/IService1/createRelationDatumLocationResponse")]
+        void createRelationDatumLocation();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createRelationDatumLocation", ReplyAction="http://tempuri.org/IService1/createRelationDatumLocationResponse")]
+        System.Threading.Tasks.Task createRelationDatumLocationAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addPropertyNode", ReplyAction="http://tempuri.org/IService1/addPropertyNodeResponse")]
+        void addPropertyNode(string name_object, string fid, System.Collections.Generic.Dictionary<string, int> dict);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/addPropertyNode", ReplyAction="http://tempuri.org/IService1/addPropertyNodeResponse")]
+        System.Threading.Tasks.Task addPropertyNodeAsync(string name_object, string fid, System.Collections.Generic.Dictionary<string, int> dict);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/removePropertyNode", ReplyAction="http://tempuri.org/IService1/removePropertyNodeResponse")]
+        void removePropertyNode(string name_object, string fid, string[] parameters);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/removePropertyNode", ReplyAction="http://tempuri.org/IService1/removePropertyNodeResponse")]
+        System.Threading.Tasks.Task removePropertyNodeAsync(string name_object, string fid, string[] parameters);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -618,6 +684,94 @@ namespace test.ServiceReference1 {
         
         public System.Threading.Tasks.Task getObjectAsync(test.ServiceReference1.RootObject root) {
             return base.Channel.getObjectAsync(root);
+        }
+        
+        public void deleteLocation(string fid) {
+            base.Channel.deleteLocation(fid);
+        }
+        
+        public System.Threading.Tasks.Task deleteLocationAsync(string fid) {
+            return base.Channel.deleteLocationAsync(fid);
+        }
+        
+        public void createCategoryList(test.ServiceReference1.CategoryList C) {
+            base.Channel.createCategoryList(C);
+        }
+        
+        public System.Threading.Tasks.Task createCategoryListAsync(test.ServiceReference1.CategoryList C) {
+            return base.Channel.createCategoryListAsync(C);
+        }
+        
+        public void deleteCategoryList(string id) {
+            base.Channel.deleteCategoryList(id);
+        }
+        
+        public System.Threading.Tasks.Task deleteCategoryListAsync(string id) {
+            return base.Channel.deleteCategoryListAsync(id);
+        }
+        
+        public void createDatum(test.ServiceReference1.Datum D) {
+            base.Channel.createDatum(D);
+        }
+        
+        public System.Threading.Tasks.Task createDatumAsync(test.ServiceReference1.Datum D) {
+            return base.Channel.createDatumAsync(D);
+        }
+        
+        public void deleteDatum(string id) {
+            base.Channel.deleteDatum(id);
+        }
+        
+        public System.Threading.Tasks.Task deleteDatumAsync(string id) {
+            return base.Channel.deleteDatumAsync(id);
+        }
+        
+        public void createRelationLocationCategoryList(string location_fid, string categorylist_id) {
+            base.Channel.createRelationLocationCategoryList(location_fid, categorylist_id);
+        }
+        
+        public System.Threading.Tasks.Task createRelationLocationCategoryListAsync(string location_fid, string categorylist_id) {
+            return base.Channel.createRelationLocationCategoryListAsync(location_fid, categorylist_id);
+        }
+        
+        public void createRelationCategoryListLocation(string categorylist_id, string location_fid) {
+            base.Channel.createRelationCategoryListLocation(categorylist_id, location_fid);
+        }
+        
+        public System.Threading.Tasks.Task createRelationCategoryListLocationAsync(string categorylist_id, string location_fid) {
+            return base.Channel.createRelationCategoryListLocationAsync(categorylist_id, location_fid);
+        }
+        
+        public void createRelationDatumCategoryList(string Did, string Cid) {
+            base.Channel.createRelationDatumCategoryList(Did, Cid);
+        }
+        
+        public System.Threading.Tasks.Task createRelationDatumCategoryListAsync(string Did, string Cid) {
+            return base.Channel.createRelationDatumCategoryListAsync(Did, Cid);
+        }
+        
+        public void createRelationDatumLocation() {
+            base.Channel.createRelationDatumLocation();
+        }
+        
+        public System.Threading.Tasks.Task createRelationDatumLocationAsync() {
+            return base.Channel.createRelationDatumLocationAsync();
+        }
+        
+        public void addPropertyNode(string name_object, string fid, System.Collections.Generic.Dictionary<string, int> dict) {
+            base.Channel.addPropertyNode(name_object, fid, dict);
+        }
+        
+        public System.Threading.Tasks.Task addPropertyNodeAsync(string name_object, string fid, System.Collections.Generic.Dictionary<string, int> dict) {
+            return base.Channel.addPropertyNodeAsync(name_object, fid, dict);
+        }
+        
+        public void removePropertyNode(string name_object, string fid, string[] parameters) {
+            base.Channel.removePropertyNode(name_object, fid, parameters);
+        }
+        
+        public System.Threading.Tasks.Task removePropertyNodeAsync(string name_object, string fid, string[] parameters) {
+            return base.Channel.removePropertyNodeAsync(name_object, fid, parameters);
         }
     }
 }

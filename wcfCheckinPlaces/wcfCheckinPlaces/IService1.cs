@@ -36,8 +36,7 @@ namespace wcfCheckinPlaces
         void getObject(RootObject root);
         [OperationContract]
         void deleteLocation(string fid);
-        [OperationContract]
-        void deleteLocation();
+        
         [OperationContract]
         void createCategoryList(CategoryList C);
         [OperationContract]
@@ -52,8 +51,7 @@ namespace wcfCheckinPlaces
         void createRelationCategoryListLocation(string categorylist_id, string location_fid);
         [OperationContract]
         void createRelationDatumCategoryList(string Did, string Cid);
-        [OperationContract]
-        void createRelationDatumCategoryList();
+      
         [OperationContract]
         void createRelationDatumLocation();
         [OperationContract]

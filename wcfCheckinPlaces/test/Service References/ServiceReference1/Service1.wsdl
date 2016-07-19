@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" />
+      <xsd:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetData_InputMessage">
@@ -61,6 +62,72 @@
   <wsdl:message name="IService1_getObject_OutputMessage">
     <wsdl:part name="parameters" element="tns:getObjectResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_deleteLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:createCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createDatum_InputMessage">
+    <wsdl:part name="parameters" element="tns:createDatum" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createDatum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createDatumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteDatum_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDatum" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteDatum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDatumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationLocationCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationLocationCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationLocationCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationLocationCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationCategoryListLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationCategoryListLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationCategoryListLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationCategoryListLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationDatumCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationDatumCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationDatumCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationDatumCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationDatumLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationDatumLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationDatumLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationDatumLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addPropertyNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:addPropertyNode" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addPropertyNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addPropertyNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_removePropertyNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:removePropertyNode" />
+  </wsdl:message>
+  <wsdl:message name="IService1_removePropertyNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removePropertyNodeResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -97,6 +164,50 @@
     <wsdl:operation name="getObject">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getObject" message="tns:IService1_getObject_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getObjectResponse" message="tns:IService1_getObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteLocation" message="tns:IService1_deleteLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteLocationResponse" message="tns:IService1_deleteLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createCategoryList" message="tns:IService1_createCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createCategoryListResponse" message="tns:IService1_createCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteCategoryList" message="tns:IService1_deleteCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteCategoryListResponse" message="tns:IService1_deleteCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createDatum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createDatum" message="tns:IService1_createDatum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createDatumResponse" message="tns:IService1_createDatum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDatum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteDatum" message="tns:IService1_deleteDatum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteDatumResponse" message="tns:IService1_deleteDatum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRelationLocationCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createRelationLocationCategoryList" message="tns:IService1_createRelationLocationCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createRelationLocationCategoryListResponse" message="tns:IService1_createRelationLocationCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRelationCategoryListLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createRelationCategoryListLocation" message="tns:IService1_createRelationCategoryListLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createRelationCategoryListLocationResponse" message="tns:IService1_createRelationCategoryListLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRelationDatumCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createRelationDatumCategoryList" message="tns:IService1_createRelationDatumCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createRelationDatumCategoryListResponse" message="tns:IService1_createRelationDatumCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRelationDatumLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createRelationDatumLocation" message="tns:IService1_createRelationDatumLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createRelationDatumLocationResponse" message="tns:IService1_createRelationDatumLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addPropertyNode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addPropertyNode" message="tns:IService1_addPropertyNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addPropertyNodeResponse" message="tns:IService1_addPropertyNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removePropertyNode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/removePropertyNode" message="tns:IService1_removePropertyNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/removePropertyNodeResponse" message="tns:IService1_removePropertyNode_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -175,6 +286,105 @@
     </wsdl:operation>
     <wsdl:operation name="getObject">
       <soap:operation soapAction="http://tempuri.org/IService1/getObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService1/createCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createDatum">
+      <soap:operation soapAction="http://tempuri.org/IService1/createDatum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDatum">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteDatum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationLocationCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService1/createRelationLocationCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationCategoryListLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/createRelationCategoryListLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationDatumCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService1/createRelationDatumCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationDatumLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/createRelationDatumLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPropertyNode">
+      <soap:operation soapAction="http://tempuri.org/IService1/addPropertyNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePropertyNode">
+      <soap:operation soapAction="http://tempuri.org/IService1/removePropertyNode" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
