@@ -197,53 +197,72 @@ namespace wcfCheckinPlaces
         public void deleteCategoryList(string id)
         {
             //lam giong nhung phan o tren -> goi lai ham trong manager , bo dong throw di 
-
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.deleteCategoryList(id);
+            // throw new NotImplementedException();
         }
 
         public void createDatum(Datum D)
         {
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.createDatum(D);
+            //throw new NotImplementedException();
         }
 
         public void deleteDatum(string id)
         {
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.deleteDatum(id);
+            //throw new NotImplementedException();
         }
 
         public void createRelationLocationCategoryList(string location_fid, string categorylist_id)
         {
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.createRelationLocationCategoryList(location_fid,categorylist_id);
+            //throw new NotImplementedException();
         }
 
         public void createRelationCategoryListLocation(string categorylist_id, string location_fid)
         {
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.createRelationCategoryListLocation(categorylist_id,location_fid);
+            //throw new NotImplementedException();
         }
 
         public void createRelationDatumCategoryList(string Did, string Cid)
         {
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.createRelationDatumCategoryList(Did,Cid);
+            //throw new NotImplementedException();
         }
 
         public void createRelationDatumCategoryList()
         {
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.createRelationDatumCategoryList();
+            //throw new NotImplementedException();
         }
 
         public void createRelationDatumLocation()
         {
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.createRelationDatumLocation();
+            //throw new NotImplementedException();
         }
 
         public void addPropertyNode(string name_object, string fid, Dictionary<string, int> dict)
         {
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.addPropertyNode(name_object,fid,dict);
+            //throw new NotImplementedException();
         }
 
         public void removePropertyNode(string name_object, string fid, List<string> parameters)
         {
-            throw new NotImplementedException();
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.removePropertyNode(name_object,fid,parameters);
+            //throw new NotImplementedException();
         }
     }
 }

@@ -22,11 +22,21 @@ namespace test
             foreach (var item in result.data)
             {
                 c.createLocationAsync( item.location, item);//insert location
-                
+
                 //insert catagory
-                //insert  location vao neo4j
-                //insert quan he
+                for(int i=0;i<item.category_list.Length;i++)
+                {
+                    c.createCategoryList(item.category_list[i]);
+                }
                 
+                //insert location
+                
+                
+                //insert quan he
+                for(int j=0;j<item.category_list.Length;j++)
+                {
+                    c.createRelationCategoryListLocation(item.category_list[j].id, item.location.fid);
+                }
             }
             //convert json to class 
             //insert class to neo4j from webservices 
