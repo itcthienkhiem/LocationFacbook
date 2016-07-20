@@ -21,27 +21,39 @@ namespace test
             ServiceReference1.RootObject result = JsonConvert.DeserializeObject<ServiceReference1.RootObject>(objects.ToString());
             foreach (var item in result.data)
             {
-                c.createLocationAsync( item.location, item);//insert location
+                //c.createLocationAsync(item.location, item);//insert location
 
-                //insert catagory
-                for(int i=0;i<item.category_list.Length;i++)
-                {
-                    c.createCategoryList(item.category_list[i]);
-                }
-                
+                ////insert catagory
+                //for (int i = 0; i < item.category_list.Length; i++)
+                //{
+                //    c.createCategoryListAsync(item.category_list[i]);
+                //}
+
                 //insert location
-                
-                
+
+
                 //insert quan he
-                for(int j=0;j<item.category_list.Length;j++)
-                {
-                    c.createRelationCategoryListLocation(item.category_list[j].id, item.location.fid);
-                }
+                //for (int i=0;i<item.category_list.Length;i++)
+                //{
+                //    c.createRelationCategoryListLocationAsync(item.category_list[i].id, item.location.fid);
+                //}
+
+                //insert datum
+                c.createDatumAsync(item);
+
+                //create relationship between datum and category_list
+                //for (int i = 0; i < item.category_list.Length; i++)
+                //{
+                //    c.createRelationDatumCategoryListAsync(item.id, item.category_list[i].id);
+                //}
+
             }
             //convert json to class 
             //insert class to neo4j from webservices 
 
-
+            //Truy van du lieu location tu city
+            
+            
         }
     }
 }

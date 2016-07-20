@@ -353,7 +353,26 @@ namespace wcfCheckinPlaces
         {
             //Anh chưa hình dung là phải cập nhật tham số thế nào?
         }
+
+        //Truy vấn dữ liệu từ neo4j
+        //1.Truy vấn categorylist
+        public void selectLocation(string city)
+        {
+            Location L = new Location();
+            L.city = city;
+            using (var driver = GraphDatabase.Driver("bolt://localhost", AuthTokens.Basic("neo4j", "123456")))
+            using (var session = driver.Session())
+            {
+                
+                string command = string.Format("MATCH (L:Location {{city:'{0}'}} return L",L.city);
+                session.Run(command);
+            }
+
+        }
     }
+  
+    
+
 }
 //sau khi anh lam xong anh chon cai nay de commit code len github e chi can get ve la xong
 //o tren webservices chua test dc chac phai copy xuong project cua anh de test 

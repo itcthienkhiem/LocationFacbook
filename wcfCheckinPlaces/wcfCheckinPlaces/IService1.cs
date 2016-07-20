@@ -120,4 +120,5 @@ namespace wcfCheckinPlaces
         [DataMember]
         public Paging paging { get; set; }
     }
+    
 }

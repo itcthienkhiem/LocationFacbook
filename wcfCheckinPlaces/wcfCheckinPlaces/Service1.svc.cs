@@ -14,13 +14,13 @@ namespace wcfCheckinPlaces
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
-    {
+    { 
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
         }
 
-     
+
         public object getPositionWebUser(string FacebookAccessToken)
         {
             var facebookClient = new FacebookClient(FacebookAccessToken);
@@ -28,7 +28,7 @@ namespace wcfCheckinPlaces
             var uid = me["id"];
             return uid;
         }
-        
+
         public string getBarFacebook(string access_token, string latitude, string longitude)
         {
             return getDataFacebook(access_token, latitude, longitude, "bar");
@@ -60,20 +60,20 @@ namespace wcfCheckinPlaces
         }
         public string getFoodyFacebook(string access_token, string latitude, string longitude)
         {
-            return getDataFacebook(access_token, latitude, longitude, "food");        
+            return getDataFacebook(access_token, latitude, longitude, "food");
         }
-        public string getImagesFromID( string fbid )
+        public string getImagesFromID(string fbid)
         {
             WebClient wc = new WebClient();
-            string u2 = @"https://graph.facebook.com/"+fbid+"/picture?type=square";
+            string u2 = @"https://graph.facebook.com/" + fbid + "/picture?type=square";
             string access = wc.DownloadString(u2);
             return access;
-            
+
         }
-        public string getDataFacebook(string access_token, string latitude, string longitude,string type)
+        public string getDataFacebook(string access_token, string latitude, string longitude, string type)
         {
             WebClient wc = new WebClient();
-            string u2 = @"https://graph.facebook.com/search?q="+type +"&type=place&center="+latitude +","+longitude+"&topic_filter=all&access_token="+access_token;
+            string u2 = @"https://graph.facebook.com/search?q=" + type + "&type=place&center=" + latitude + "," + longitude + "&topic_filter=all&access_token=" + access_token;
             string access = wc.DownloadString(u2);
             return access;
         }
@@ -93,7 +93,7 @@ namespace wcfCheckinPlaces
             searchParams.Add("distance", "1000");
 
             FacebookClient fbClient = new FacebookClient("1387174581298632|VF96nLPKg9EOglF3nSjamJCAFXU");
-            var searchedPlaces = fbClient.Get("albums", searchParams); 
+            var searchedPlaces = fbClient.Get("albums", searchParams);
 
             return "";
         }
@@ -124,8 +124,8 @@ namespace wcfCheckinPlaces
         public string getAllAlbums(string access_token, string locationID)
         {
 
-         //   Dictionary<string, object> searchParams = new Dictionary<string, object>();
-         //   searchParams.Add("albums", "album,from,height,images,link,id,name");
+            //   Dictionary<string, object> searchParams = new Dictionary<string, object>();
+            //   searchParams.Add("albums", "album,from,height,images,link,id,name");
 
 
             FacebookClient fbClient = new FacebookClient(access_token);
@@ -144,12 +144,12 @@ namespace wcfCheckinPlaces
             });
             fb.AccessToken = result.access_token;
 
-            return fb.AccessToken ;
-            
+            return fb.AccessToken;
+
             //WebClient wc = new WebClient();
             //string u2 = @"https://graph.facebook.com/search?q=coffee&type=place&center=37.76,122.427&topic_filter=all&access_token=EAATtoMAo5cgBAO1tGfjQZCppIqvREU7KZCwneqxAurhESHR0rcM3nm8d5CA7ANhU2Hj65SYu9xvTrAMZAtV530pe0Q0ZARZBld78xO5UZCDMbMf4tQVIftfeFuGAP5n3du5UEtxqOBy9626pU4LIKNyUP5Xxa7DiWmbenle0mkhAZDZD";
             //string access = wc.DownloadString(u2);
-            
+
             //return access;
 
         }
@@ -165,12 +165,12 @@ namespace wcfCheckinPlaces
 
             neo4jNodeManagement manager = new neo4jNodeManagement();
             // insert node ...
-            manager.createLocation(location, datum) ;
+            manager.createLocation(location, datum);
         }
 
         public void getObject(RootObject root)
-        { 
-            
+        {
+
         }
 
 
@@ -219,21 +219,21 @@ namespace wcfCheckinPlaces
         public void createRelationLocationCategoryList(string location_fid, string categorylist_id)
         {
             neo4jNodeManagement manager = new neo4jNodeManagement();
-            manager.createRelationLocationCategoryList(location_fid,categorylist_id);
+            manager.createRelationLocationCategoryList(location_fid, categorylist_id);
             //throw new NotImplementedException();
         }
 
         public void createRelationCategoryListLocation(string categorylist_id, string location_fid)
         {
             neo4jNodeManagement manager = new neo4jNodeManagement();
-            manager.createRelationCategoryListLocation(categorylist_id,location_fid);
+            manager.createRelationCategoryListLocation(categorylist_id, location_fid);
             //throw new NotImplementedException();
         }
 
         public void createRelationDatumCategoryList(string Did, string Cid)
         {
             neo4jNodeManagement manager = new neo4jNodeManagement();
-            manager.createRelationDatumCategoryList(Did,Cid);
+            manager.createRelationDatumCategoryList(Did, Cid);
             //throw new NotImplementedException();
         }
 
@@ -254,15 +254,24 @@ namespace wcfCheckinPlaces
         public void addPropertyNode(string name_object, string fid, Dictionary<string, int> dict)
         {
             neo4jNodeManagement manager = new neo4jNodeManagement();
-            manager.addPropertyNode(name_object,fid,dict);
+            manager.addPropertyNode(name_object, fid, dict);
             //throw new NotImplementedException();
         }
 
         public void removePropertyNode(string name_object, string fid, List<string> parameters)
         {
             neo4jNodeManagement manager = new neo4jNodeManagement();
-            manager.removePropertyNode(name_object,fid,parameters);
+            manager.removePropertyNode(name_object, fid, parameters);
             //throw new NotImplementedException();
         }
+
+        public void selectLocation(string city)
+        {
+            neo4jNodeManagement manager = new neo4jNodeManagement();
+            manager.selectLocation(city);
+        }
+
+        
     }
+    
 }
