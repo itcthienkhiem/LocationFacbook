@@ -21,39 +21,45 @@ namespace test
             ServiceReference1.RootObject result = JsonConvert.DeserializeObject<ServiceReference1.RootObject>(objects.ToString());
             foreach (var item in result.data)
             {
-                //c.createLocationAsync(item.location, item);//insert location
+                c.createLocationAsync(item.location, item);//insert location
+               // c.createCategoryList(item.category_list[0]);
+                ////insert catagorylist
+                for (int i = 0; i < item.category_list.Length; i++)
+                {
+                    c.createCategoryListAsync(item.category_list[i]);
 
-                ////insert catagory
-                //for (int i = 0; i < item.category_list.Length; i++)
-                //{
-                //    c.createCategoryListAsync(item.category_list[i]);
-                //}
+                   // c.createRelationCategoryListLocationAsync(item.category_list[i].id, item.id);
+                }
 
-                //insert location
+                ////insert quan he categoryList va Location
+                for (int i = 0; i < item.category_list.Length; i++)
+                {
+                    c.createRelationCategoryListLocationAsync(item.category_list[i].id, item.id);
+                }
 
+                //insert quan he giua Location va CategoryList
+                for (int i = 0; i < item.category_list.Length; i++)
+                {
+                    c.createRelationLocationCategoryListAsync(item.id, item.category_list[i].id);
+                }
 
-                //insert quan he
-                //for (int i=0;i<item.category_list.Length;i++)
-                //{
-                //    c.createRelationCategoryListLocationAsync(item.category_list[i].id, item.location.fid);
-                //}
-
-                //insert datum
+                ////insert datum
                 c.createDatumAsync(item);
 
-                //create relationship between datum and category_list
-                //for (int i = 0; i < item.category_list.Length; i++)
-                //{
-                //    c.createRelationDatumCategoryListAsync(item.id, item.category_list[i].id);
-                //}
+                ////create relationship between datum and category_list
+                for (int i = 0; i < item.category_list.Length; i++)
+                {
+                    c.createRelationDatumCategoryListAsync(item.id, item.category_list[i].id);
+                }
 
             }
             //convert json to class 
             //insert class to neo4j from webservices 
 
-            //Truy van du lieu location tu city
             
-            
+           
+
+
         }
     }
 }

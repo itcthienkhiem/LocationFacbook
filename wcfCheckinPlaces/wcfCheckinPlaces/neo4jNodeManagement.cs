@@ -355,25 +355,30 @@ namespace wcfCheckinPlaces
         }
 
         //Truy vấn dữ liệu từ neo4j
-        //1.Truy vấn categorylist
-        public void selectLocation(string city)
+        public void selectLocationHaveTheSameCategoryList(string nameOfCategoryList)
         {
-            Location L = new Location();
-            L.city = city;
             using (var driver = GraphDatabase.Driver("bolt://localhost", AuthTokens.Basic("neo4j", "123456")))
             using (var session = driver.Session())
             {
-                
-                string command = string.Format("MATCH (L:Location {{city:'{0}'}} return L",L.city);
-                session.Run(command);
+                string searchTerm = nameOfCategoryList;
+                var result = session.Run("Match(C:CategoryList {name:{term}})-[r:HAVE]->(L:Location) Return C.id,C.name,L.fid,L.street,L.city",
+                               new Dictionary<string, object> { { "term", searchTerm } });
+                Console.WriteLine($"List of location have the same CategoryList name {searchTerm}:");
+                foreach (var record in result)
+                {
+                    Console.WriteLine(record["C.id"].As<string>());
+                    Console.WriteLine(record["C.name"].As<string>());
+                    Console.WriteLine(record["L.fid"].As<string>());
+                    Console.WriteLine(record["L.street"].As<string>());
+                    Console.WriteLine(record["L.city"].As<string>());
+                    Console.WriteLine("\n");
+                }
             }
-
         }
-    }
-  
-    
 
-}
+
+
+    }
 //sau khi anh lam xong anh chon cai nay de commit code len github e chi can get ve la xong
 //o tren webservices chua test dc chac phai copy xuong project cua anh de test 
 
