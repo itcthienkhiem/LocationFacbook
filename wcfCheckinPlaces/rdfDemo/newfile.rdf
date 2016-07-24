@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:foaf="http://xmlns.com/foaf/0.1/" xml:base="http://rdfsharp.codeplex.com/default_graph#">
+  <rdf:Description rdf:about="http://www.localhost.com/mickey_mouse">
+    <foaf:NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hachiko Coffee</foaf:NAME>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10,7978705</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">687683367952763</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ho Chi Minh City</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vietnam</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">106,6915406</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+    </foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14 Hoa Sữa, Phú Nhuận (Khu Phan Xích Long)</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">70000</foaf:lat>
+    <foaf:NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DVN Coffee PHÚC YÊN</foaf:NAME>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10,825631946</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">537412236374145</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">106,629712706</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31/14 Đường Phan Huy Ích , Quận Gò Vấp , nằm trong chung cư Phúc Yên</foaf:lat>
+    <foaf:NAME rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The Coffee House</foaf:NAME>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10,7922474</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1583615838557529</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">106,6425243</foaf:lat>
+    <foaf:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">112 Bàu Cát. Quận Tân Bình</foaf:lat>
+  </rdf:Description>
+</rdf:RDF>
