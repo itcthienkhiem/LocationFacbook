@@ -35,25 +35,96 @@ List<RDFTriple> triples = new List<RDFTriple>();
             foreach (var item in lstResult)
 {
 
-    RDFTypedLiteral name = new RDFTypedLiteral(item.name, RDFDatatypeRegister.
-    GetByPrefixAndDatatype("xsd", "string"));
-    RDFTriple name_r
-          = new RDFTriple(
-                new RDFResource("http://www.waltdisney.com/mickey_mouse"),
-                new RDFResource("http://xmlns.com/foaf/0.1/NAME"),
-                name);
-    triples.Add(name_r);
-//add them thuoc tinh cho nay 
-    RDFTypedLiteral lat = new RDFTypedLiteral(item.latitude.ToString(), RDFDatatypeRegister.
-    GetByPrefixAndDatatype("xsd", "string"));
-    RDFTriple lat_r
-          = new RDFTriple(
-                new RDFResource("http://www.waltdisney.com/mickey_mouse"),
-                new RDFResource("http://xmlns.com/foaf/0.1/lat"),
-                lat);
-    triples.Add(lat_r);
+                RDFTypedLiteral name = new RDFTypedLiteral(item.name, RDFDatatypeRegister.
+                GetByPrefixAndDatatype("xsd", "string"));
+                RDFTriple name_r
+                      = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/NAME"),
+                            name);
+                triples.Add(name_r);
 
-}
+                //add L.latitude
+                RDFTypedLiteral lat = new RDFTypedLiteral(item.latitude.ToString(), RDFDatatypeRegister.
+                GetByPrefixAndDatatype("xsd", "string"));
+                RDFTriple lat_r
+                        = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/lat"),
+                            lat);
+                triples.Add(lat_r);
+
+                //add L.fid
+                RDFTypedLiteral fid = new RDFTypedLiteral(item.fid.ToString(), RDFDatatypeRegister.
+                    GetByPrefixAndDatatype("xsd", "string"));
+                RDFTriple fid_r
+                        = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/lat"),
+                            fid);
+                triples.Add(fid_r);
+
+                //add L.city
+                RDFTypedLiteral city = new RDFTypedLiteral(item.city.ToString(), RDFDatatypeRegister.
+                        GetByPrefixAndDatatype("xsd", "string"));
+                RDFTriple city_r
+                        = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/lat"),
+                            city);
+                triples.Add(city_r);
+
+                //add L.country
+                RDFTypedLiteral country = new RDFTypedLiteral(item.country.ToString(), RDFDatatypeRegister.
+                        GetByPrefixAndDatatype("xsd", "string"));
+                RDFTriple country_r
+                        = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/lat"),
+                            country);
+                triples.Add(country_r);
+
+                //add L.longitude
+                RDFTypedLiteral longitude = new RDFTypedLiteral(item.longitude.ToString(), RDFDatatypeRegister.
+                        GetByPrefixAndDatatype("xsd", "string"));
+                RDFTriple longitude_r
+                        = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/lat"),
+                            longitude);
+                triples.Add(longitude_r);
+
+                //add L.state
+                RDFTypedLiteral state = new RDFTypedLiteral(item.state.ToString(), RDFDatatypeRegister.
+                        GetByPrefixAndDatatype("xsd", "string"));
+                RDFTriple state_r
+                        = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/lat"),
+                            state);
+                triples.Add(state_r);
+
+                //add L.street
+                RDFTypedLiteral street = new RDFTypedLiteral(item.street.ToString(), RDFDatatypeRegister.
+                        GetByPrefixAndDatatype("xsd", "string"));
+                RDFTriple street_r
+                        = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/lat"),
+                            street);
+                triples.Add(street_r);
+
+                //add L.zip
+                RDFTypedLiteral zip = new RDFTypedLiteral(item.zip.ToString(), RDFDatatypeRegister.
+                        GetByPrefixAndDatatype("xsd", "string"));
+                RDFTriple zip_r
+                        = new RDFTriple(
+                            new RDFResource("http://www.waltdisney.com/mickey_mouse"),
+                            new RDFResource("http://xmlns.com/foaf/0.1/lat"),
+                            zip);
+                triples.Add(zip_r);
+
+            }
 RDFGraph waltdisney_filled = new RDFGraph(triples);
             // 
 //SET CONTEXT OF A 
