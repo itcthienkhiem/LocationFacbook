@@ -32,6 +32,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dotNetRDF">
+      <HintPath>C:\Users\khiem\Desktop\dotNetRDF_library_109_stable\Core\net40\dotNetRDF.dll</HintPath>
+    </Reference>
+    <Reference Include="dotNetRDF.Data.Virtuoso">
+      <HintPath>C:\Users\khiem\Desktop\dotNetRDF_library_109_stable\Data\Virtuoso\net40\dotNetRDF.Data.Virtuoso.dll</HintPath>
+    </Reference>
+    <Reference Include="dotNetRDF.Query.FullText">
+      <HintPath>C:\Users\khiem\Desktop\dotNetRDF_library_109_stable\Query\FullText\net40\dotNetRDF.Query.FullText.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>C:\Users\khiem\Desktop\dotNetRDF_library_109_stable\Core\net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>C:\Users\khiem\Desktop\dotNetRDF_library_109_stable\Query\FullText\net40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\khiem\Desktop\dotNetRDF_library_109_stable\Core\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenLink.Data.Virtuoso">
+      <HintPath>C:\Users\khiem\Desktop\dotNetRDF_library_109_stable\Data\Virtuoso\net40\OpenLink.Data.Virtuoso.dll</HintPath>
+    </Reference>
     <Reference Include="RDFSharp">
       <HintPath>..\dll\RDFSharp.dll</HintPath>
     </Reference>
@@ -44,6 +65,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="VDS.Common">
+      <HintPath>C:\Users\khiem\Desktop\dotNetRDF_library_109_stable\Core\net40\VDS.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
