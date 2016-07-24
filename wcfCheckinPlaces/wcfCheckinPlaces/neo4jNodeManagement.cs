@@ -363,7 +363,7 @@ namespace wcfCheckinPlaces
                 string searchTerm = nameOfCategoryList;
                 var result = session.Run("Match(C:CategoryList {name:{term}})-[r:HAVE]->(L:Location) Return C.id,C.name,L.fid,L.street,L.city",
                                new Dictionary<string, object> { { "term", searchTerm } });
-                Console.WriteLine($"List of location have the same CategoryList name {searchTerm}:");
+                Console.WriteLine(@"List of location have the same CategoryList name {searchTerm}:");
                 foreach (var record in result)
                 {
                     Console.WriteLine(record["C.id"].As<string>());
@@ -379,6 +379,7 @@ namespace wcfCheckinPlaces
 
 
     }
+}
 //sau khi anh lam xong anh chon cai nay de commit code len github e chi can get ve la xong
 //o tren webservices chua test dc chac phai copy xuong project cua anh de test 
 
