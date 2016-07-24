@@ -265,12 +265,16 @@ namespace wcfCheckinPlaces
             //throw new NotImplementedException();
         }
 
-        public void selectLocationHaveTheSameCategoryList(string name)
+        //public void selectLocationHaveTheSameCategoryList(string name)
+        //{
+        //    neo4jNodeManagement manager = new neo4jNodeManagement();
+        //    manager.selectLocationHaveTheSameCategoryList(name);
+        //}
+        public List<Location> selectLocationHaveTheSameCategoryList(string nameOfCategoryList)
         {
             neo4jNodeManagement manager = new neo4jNodeManagement();
-            manager.selectLocationHaveTheSameCategoryList(name);
+           return  manager.selectLocationHaveTheSameCategoryList(nameOfCategoryList);
         }
-
         
     }
     

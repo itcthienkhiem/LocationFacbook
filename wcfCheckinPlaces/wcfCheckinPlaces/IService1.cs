@@ -58,6 +58,9 @@ namespace wcfCheckinPlaces
         void addPropertyNode(string name_object, string fid, Dictionary<string, int> dict);
         [OperationContract]
         void removePropertyNode(string name_object, string fid, List<string> parameters);
+        [OperationContract]
+        List<Location> selectLocationHaveTheSameCategoryList(string nameOfCategoryList);
+
 
     }
 

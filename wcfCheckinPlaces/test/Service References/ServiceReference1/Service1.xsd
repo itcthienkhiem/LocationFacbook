@@ -56,4 +56,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Paging" nillable="true" type="tns:Paging" />
+  <xs:complexType name="ArrayOfLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocation" nillable="true" type="tns:ArrayOfLocation" />
 </xs:schema>

@@ -355,25 +355,39 @@ namespace wcfCheckinPlaces
         }
 
         //Truy vấn dữ liệu từ neo4j
-        public void selectLocationHaveTheSameCategoryList(string nameOfCategoryList)
+        public List<Location> selectLocationHaveTheSameCategoryList(string nameOfCategoryList)
         {
+            List<Location> lstResults = new List<Location>();
             using (var driver = GraphDatabase.Driver("bolt://localhost", AuthTokens.Basic("neo4j", "123456")))
             using (var session = driver.Session())
             {
                 string searchTerm = nameOfCategoryList;
-                var result = session.Run("Match(C:CategoryList {name:{term}})-[r:HAVE]->(L:Location) Return C.id,C.name,L.fid,L.street,L.city",
+                var result = session.Run("Match(C:CategoryList {name:{term}})-[r:HAVE]->(L:Location) Return L.country, L.fid,L.street,L.city,L.name,L.zip,L.latitude,L.longitude,L.state",
                                new Dictionary<string, object> { { "term", searchTerm } });
-                Console.WriteLine(@"List of location have the same CategoryList name {searchTerm}:");
+                //Console.WriteLine(@"List of location have the same CategoryList name {searchTerm}:");
                 foreach (var record in result)
                 {
-                    Console.WriteLine(record["C.id"].As<string>());
-                    Console.WriteLine(record["C.name"].As<string>());
-                    Console.WriteLine(record["L.fid"].As<string>());
-                    Console.WriteLine(record["L.street"].As<string>());
-                    Console.WriteLine(record["L.city"].As<string>());
-                    Console.WriteLine("\n");
+                    Location location = new Location();
+                    location.fid = record["L.fid"].As<string>();
+                    location.name = record["L.name"].As<string>();
+                    location.latitude = record["L.latitude"].As<double>();
+                    location.longitude = record["L.longitude"].As<double>();
+                    location.state = record["L.state"].As<string>();
+                    location.street = record["L.street"].As<string>();
+                    location.zip = record["L.zip"].As<string>();
+                    location.city = record["L.city"].As<string>();
+                    location.country = record["L.country"].As<string>();                    
+
+                    lstResults.Add(location);
+                    //Console.WriteLine(record["C.id"].As<string>());
+                    //Console.WriteLine(record["C.name"].As<string>());
+                    //Console.WriteLine(record["L.fid"].As<string>());
+                    //Console.WriteLine(record["L.street"].As<string>());
+                    //Console.WriteLine(record["L.city"].As<string>());
+                    //Console.WriteLine("\n");
                 }
             }
+            return lstResults;
         }
 
 

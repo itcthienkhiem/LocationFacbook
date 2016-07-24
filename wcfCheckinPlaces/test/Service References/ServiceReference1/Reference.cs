@@ -585,6 +585,12 @@ namespace test.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/removePropertyNode", ReplyAction="http://tempuri.org/IService1/removePropertyNodeResponse")]
         System.Threading.Tasks.Task removePropertyNodeAsync(string name_object, string fid, string[] parameters);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/selectLocationHaveTheSameCategoryList", ReplyAction="http://tempuri.org/IService1/selectLocationHaveTheSameCategoryListResponse")]
+        test.ServiceReference1.Location[] selectLocationHaveTheSameCategoryList(string nameOfCategoryList);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/selectLocationHaveTheSameCategoryList", ReplyAction="http://tempuri.org/IService1/selectLocationHaveTheSameCategoryListResponse")]
+        System.Threading.Tasks.Task<test.ServiceReference1.Location[]> selectLocationHaveTheSameCategoryListAsync(string nameOfCategoryList);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -772,6 +778,14 @@ namespace test.ServiceReference1 {
         
         public System.Threading.Tasks.Task removePropertyNodeAsync(string name_object, string fid, string[] parameters) {
             return base.Channel.removePropertyNodeAsync(name_object, fid, parameters);
+        }
+        
+        public test.ServiceReference1.Location[] selectLocationHaveTheSameCategoryList(string nameOfCategoryList) {
+            return base.Channel.selectLocationHaveTheSameCategoryList(nameOfCategoryList);
+        }
+        
+        public System.Threading.Tasks.Task<test.ServiceReference1.Location[]> selectLocationHaveTheSameCategoryListAsync(string nameOfCategoryList) {
+            return base.Channel.selectLocationHaveTheSameCategoryListAsync(nameOfCategoryList);
         }
     }
 }
