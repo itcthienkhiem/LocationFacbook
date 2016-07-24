@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" />
+  <xs:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="value" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessTokenFromCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AppSecret" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccessTokenFromCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAccessTokenFromCodeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFoodFacebook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="access_token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getFoodFacebookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getFoodFacebookResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllAlbumsImages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AppID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="AppSecret" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllAlbumsImagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAllAlbumsImagesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPhotoImages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="access_token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="albumID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPhotoImagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAllPhotoImagesResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllAlbums">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="access_token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="locationID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllAlbumsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAllAlbumsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCoffeeFacebook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="access_token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCoffeeFacebookResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getCoffeeFacebookResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="location" nillable="true" type="q1:Location" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="datum" nillable="true" type="q2:Datum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="root" nillable="true" type="q3:RootObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getObjectResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createCategoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="C" nillable="true" type="q4:CategoryList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createCategoryListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteCategoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteCategoryListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createDatum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="D" nillable="true" type="q5:Datum" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createDatumResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteDatum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteDatumResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createRelationLocationCategoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="location_fid" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="categorylist_id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createRelationLocationCategoryListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createRelationCategoryListLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="categorylist_id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="location_fid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createRelationCategoryListLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createRelationDatumCategoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Did" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Cid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createRelationDatumCategoryListResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createRelationDatumLocation">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createRelationDatumLocationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addPropertyNode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_object" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fid" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="dict" nillable="true" type="q6:ArrayOfKeyValueOfstringint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addPropertyNodeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removePropertyNode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_object" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fid" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="parameters" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="removePropertyNodeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="selectLocationHaveTheSameCategoryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nameOfCategoryList" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="selectLocationHaveTheSameCategoryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" minOccurs="0" name="selectLocationHaveTheSameCategoryListResult" nillable="true" type="q8:ArrayOfLocation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

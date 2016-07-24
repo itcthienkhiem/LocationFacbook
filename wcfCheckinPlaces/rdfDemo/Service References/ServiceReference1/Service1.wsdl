@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/wcfCheckinPlaces" />
+      <xsd:import schemaLocation="http://localhost:23792/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAccessTokenFromCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessTokenFromCode" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAccessTokenFromCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessTokenFromCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFoodFacebook_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFoodFacebook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getFoodFacebook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFoodFacebookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllAlbumsImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAlbumsImages" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllAlbumsImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAlbumsImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllPhotoImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPhotoImages" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllPhotoImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPhotoImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllAlbums_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAlbums" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getAllAlbums_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllAlbumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getCoffeeFacebook_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCoffeeFacebook" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getCoffeeFacebook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCoffeeFacebookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:createLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:getObject" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:createCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createDatum_InputMessage">
+    <wsdl:part name="parameters" element="tns:createDatum" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createDatum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createDatumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteDatum_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDatum" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteDatum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteDatumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationLocationCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationLocationCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationLocationCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationLocationCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationCategoryListLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationCategoryListLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationCategoryListLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationCategoryListLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationDatumCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationDatumCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationDatumCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationDatumCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationDatumLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationDatumLocation" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createRelationDatumLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createRelationDatumLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addPropertyNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:addPropertyNode" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addPropertyNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addPropertyNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_removePropertyNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:removePropertyNode" />
+  </wsdl:message>
+  <wsdl:message name="IService1_removePropertyNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:removePropertyNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_selectLocationHaveTheSameCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:selectLocationHaveTheSameCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService1_selectLocationHaveTheSameCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:selectLocationHaveTheSameCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessTokenFromCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAccessTokenFromCode" message="tns:IService1_GetAccessTokenFromCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAccessTokenFromCodeResponse" message="tns:IService1_GetAccessTokenFromCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFoodFacebook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getFoodFacebook" message="tns:IService1_getFoodFacebook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getFoodFacebookResponse" message="tns:IService1_getFoodFacebook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllAlbumsImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAllAlbumsImages" message="tns:IService1_getAllAlbumsImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAllAlbumsImagesResponse" message="tns:IService1_getAllAlbumsImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPhotoImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAllPhotoImages" message="tns:IService1_getAllPhotoImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAllPhotoImagesResponse" message="tns:IService1_getAllPhotoImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllAlbums">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getAllAlbums" message="tns:IService1_getAllAlbums_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getAllAlbumsResponse" message="tns:IService1_getAllAlbums_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCoffeeFacebook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getCoffeeFacebook" message="tns:IService1_getCoffeeFacebook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getCoffeeFacebookResponse" message="tns:IService1_getCoffeeFacebook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createLocation" message="tns:IService1_createLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createLocationResponse" message="tns:IService1_createLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getObject" message="tns:IService1_getObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getObjectResponse" message="tns:IService1_getObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteLocation" message="tns:IService1_deleteLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteLocationResponse" message="tns:IService1_deleteLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createCategoryList" message="tns:IService1_createCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createCategoryListResponse" message="tns:IService1_createCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteCategoryList" message="tns:IService1_deleteCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteCategoryListResponse" message="tns:IService1_deleteCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createDatum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createDatum" message="tns:IService1_createDatum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createDatumResponse" message="tns:IService1_createDatum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteDatum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteDatum" message="tns:IService1_deleteDatum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteDatumResponse" message="tns:IService1_deleteDatum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRelationLocationCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createRelationLocationCategoryList" message="tns:IService1_createRelationLocationCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createRelationLocationCategoryListResponse" message="tns:IService1_createRelationLocationCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRelationCategoryListLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createRelationCategoryListLocation" message="tns:IService1_createRelationCategoryListLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createRelationCategoryListLocationResponse" message="tns:IService1_createRelationCategoryListLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRelationDatumCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createRelationDatumCategoryList" message="tns:IService1_createRelationDatumCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createRelationDatumCategoryListResponse" message="tns:IService1_createRelationDatumCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createRelationDatumLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createRelationDatumLocation" message="tns:IService1_createRelationDatumLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createRelationDatumLocationResponse" message="tns:IService1_createRelationDatumLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addPropertyNode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addPropertyNode" message="tns:IService1_addPropertyNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addPropertyNodeResponse" message="tns:IService1_addPropertyNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="removePropertyNode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/removePropertyNode" message="tns:IService1_removePropertyNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/removePropertyNodeResponse" message="tns:IService1_removePropertyNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="selectLocationHaveTheSameCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/selectLocationHaveTheSameCategoryList" message="tns:IService1_selectLocationHaveTheSameCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/selectLocationHaveTheSameCategoryListResponse" message="tns:IService1_selectLocationHaveTheSameCategoryList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessTokenFromCode">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAccessTokenFromCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFoodFacebook">
+      <soap:operation soapAction="http://tempuri.org/IService1/getFoodFacebook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAlbumsImages">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAllAlbumsImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllPhotoImages">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAllPhotoImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllAlbums">
+      <soap:operation soapAction="http://tempuri.org/IService1/getAllAlbums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCoffeeFacebook">
+      <soap:operation soapAction="http://tempuri.org/IService1/getCoffeeFacebook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/createLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getObject">
+      <soap:operation soapAction="http://tempuri.org/IService1/getObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService1/createCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createDatum">
+      <soap:operation soapAction="http://tempuri.org/IService1/createDatum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDatum">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteDatum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationLocationCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService1/createRelationLocationCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationCategoryListLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/createRelationCategoryListLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationDatumCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService1/createRelationDatumCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationDatumLocation">
+      <soap:operation soapAction="http://tempuri.org/IService1/createRelationDatumLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPropertyNode">
+      <soap:operation soapAction="http://tempuri.org/IService1/addPropertyNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removePropertyNode">
+      <soap:operation soapAction="http://tempuri.org/IService1/removePropertyNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="selectLocationHaveTheSameCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService1/selectLocationHaveTheSameCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:23792/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
